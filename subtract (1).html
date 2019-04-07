@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <title>Quiz</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="add_style1.css">
 <style>
 
@@ -44,11 +46,11 @@ function returnHome(){
 function renderQuestion(){
   test = get("test");
   if(pos >= questions.length){
-    test.innerHTML = "<h1>You got "+correct+" of "+questions.length+" questions correct</h1>";
+    test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
     get("test_status").innerHTML = "Test completed";
     // resets the variable to allow users to restart the test
     //Return to home screen
-    test.innerHTML += "<a class='btn btn-primary' href='C:/Users/user/Downloads/Front-End/home.html'>Return</a>";
+  test.innerHTML += "<a class='btn btn-primary' href='home.html'>Return</a>";
     pos = 0;
     correct = 0;
     // stops rest of renderQuestion function running when test is completed
@@ -69,9 +71,8 @@ function renderQuestion(){
 }
 
 function endTest(){
-test.innerHTML = "<h1>You got "+correct+" of "+questions.length+" questions correct</h1>";\
-//Return to home screen
-test.innerHTML += "<a class='btn btn-primary' href='C:/Users/user/Downloads/Front-End/home.html'>Return</a>";
+test.innerHTML = "<h1>You got "+correct+" of "+questions.length+" questions correct</h1>";
+test.innerHTML += "<a class='btn btn-primary' href='home.html'>Return</a>";
 }
 
 function checkAnswer(){
@@ -94,10 +95,12 @@ function checkAnswer(){
 }
 window.addEventListener("load", renderQuestion, false);
 </script>
+
+
 </head>
 <body>
-  <h1 class="container" id="test_status" style="margin:auto;"></h1>
-  <div class="jumbotron container" id="test" style = "margin:auto;"></div>
+<h1 class="container" id="test_status" style="margin:auto;"></h1>
+<div class="jumbotron container" id="test" style = "margin:auto;"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
