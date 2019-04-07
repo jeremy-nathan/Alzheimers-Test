@@ -11,8 +11,13 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 /* div#test{
    padding:100px 100px 100px 500px; background-color:#FFFFFF; width:50%;} */
 
-h2{
-position:auto;
+h1{
+position:relative;
+padding-top: 12.5%;
+left: 50%;
+top: 50%;
+transform: translateX(-50%) translateY(-50%);
+
 }
 
 
@@ -64,7 +69,7 @@ function renderQuestion(){
   chA = questions[pos][1];
   chB = questions[pos][2];
   chC = questions[pos][3];
-  test.innerHTML = "<h1>"+question+"</h1>";
+  test.innerHTML = "<h2>"+question+"</h2>";
   // the += appends to the data we started on the line above
   test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
   test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
@@ -101,8 +106,8 @@ window.addEventListener("load", renderQuestion, false);
 
 </head>
 <body>
-<h2 class="container" id="test_status" style="margin:auto;"></h2>
-<div id="test" style = "margin:auto;"></div>
+<h1 class="container" id="test_status" style="margin:auto;"></h1>
+<div class="jumbotron container" id="test" style = "margin:auto;"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
