@@ -8,7 +8,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <link rel="stylesheet" href="add_style1.css">
 <style>
 
-h2{
+
+h1{
   position:relative;
   padding-top: 12.5%;
   left: 50%;
@@ -47,6 +48,8 @@ function returnHome(){
 }
 
 
+
+
 function renderQuestion(){
   test = get("test");
   if(pos >= questions.length){
@@ -60,12 +63,13 @@ function renderQuestion(){
     // stops rest of renderQuestion function running when test is completed
     return false;
   }
+
   get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
   question = questions[pos][0];
   chA = questions[pos][1];
   chB = questions[pos][2];
   chC = questions[pos][3];
-  test.innerHTML = "<h1>"+question+"</h1>";
+  test.innerHTML = "<h2>"+question+"</h2>";
   // the += appends to the data we started on the line above
   test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
   test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
@@ -103,9 +107,9 @@ window.addEventListener("load", renderQuestion, false);
 
 </head>
 <body>
-<h1 class="container" id="test_status" style="margin:auto;"></h1>
+<h1 class="text-center" id="test_status" style="margin:auto;"></h1>
 <div class="jumbotron container" id="test" style = "margin:auto;"></div>
-</div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
