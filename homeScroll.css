@@ -5,6 +5,12 @@
  */
  html{
    scroll-behavior: smooth;
+   /* background-image: url('triangles.jpg'); */
+ }
+ body{
+   background-image: url("triangles.jpg");
+   background-size: cover;
+   background-attachment: fixed;
  }
 #first{
   background-color: #7030A0;
