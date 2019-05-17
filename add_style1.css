@@ -1,10 +1,21 @@
 html { /*global settings*/
     background-image: url(http://sfwallpaper.com/images/background-image-for-website-1.jpg);
     background-repeat: repeat;
+
 }
 header {
     text-align: center;
     background-image: url(http://sfwallpaper.com/images/background-image-for-website-1.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    font-size: 30px;
+}
+
+h2{
+
+  font-size: 70px;
+}
+
+body{
+  font-size: 40px;
 }
