@@ -1,5 +1,8 @@
 body{
-  background-color: #171717;
+  background-image: url("triangles.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+
 }
 
 #signUp{
