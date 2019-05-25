@@ -1,8 +1,10 @@
-html { /*global settings*/
-    background-image: url(http://sfwallpaper.com/images/background-image-for-website-1.jpg);
-    background-repeat: repeat;
+body{
+  background-image: url("triangles.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 
 }
+
 header {
     text-align: center;
     background-image: url(http://sfwallpaper.com/images/background-image-for-website-1.jpg);
