@@ -21,24 +21,26 @@
       <div class="card-body">
         <h3 class="card-title text-center">Sign In</h3>
         <p></p>
-        <!-- USERNAME -->
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><span class="fas fa-user"></span> </span>
+        <form class="" action="home.html" method="post">
+          <!-- USERNAME -->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><span class="fas fa-user"></span> </span>
+            </div>
+            <input required type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
           </div>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <!-- PASSWORD  -->
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><span class="fas fa-lock"></span> </span>
+          <!-- PASSWORD  -->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><span class="fas fa-lock"></span> </span>
+            </div>
+            <input required type="password" class="form-control" placeholder="Enter Password" aria-label="Username" aria-describedby="basic-addon1">
           </div>
-          <input type="password" class="form-control" placeholder="Enter Password" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <p></p>
-        <h6><a href="sign up.html">No Account? Click Here to Register</a></h6>
-        <p></p>
-        <a href="home.html" class="btn col-9 btn-primary">Sign In</a>
+          <p></p>
+          <h6><a href="sign up.html">No Account? Click Here to Register</a></h6>
+          <p></p>
+          <button type='submit' class="btn col-9 btn-primary">Sign In</button>
+        </form>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
