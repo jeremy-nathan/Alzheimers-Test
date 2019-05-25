@@ -8,40 +8,244 @@
 
   </head>
   <body>
-    <div style="margin:0;position:absolute;top:50%;left:50%;-ms-transform:translate(-50%, -50%);transform: translate(-50%, -50%);" class="container jumbotron">
-      <h2 id="question"></h2>
+    <h1 id="results"></h1>
+    <div class="container jumbotron" style = "margin-top:25px;">
+      <div class="quiz-container">
+        <div id="quiz"></div>
+      </div>
       <br>
-      <div class="container">
+      <br>
+      <br>
+      <button class="btn btn-primary" id="previous">Previous Question</button>
+      <button class="btn btn-primary" id="next">Next Question</button>
+      <button class="btn btn-success" id="submit">Submit Quiz</button>
+      <p></p>
+      <div class="row">
+        <div class="col-lg">
 
+        </div>
+        <div class="col-4">
+          <a href="home.html" class="btn btn-block btn-outline-info">Return</a>
+        </div>
+        <div class="col-lg">
+
+        </div>
       </div>
     </div>
 
 
+
     <script type="text/javascript">
+    (function() {
+const myQuestions = [
+  {
+    question: "44 + 98 =",
+    answers: {
+      a: "142",
+      b: "89",
+      c: "5"
+    },
+    correctAnswer: "a"
+  },
+  {
+    question: "7 - 3 =",
+    answers: {
+      a: "8",
+      b: "4",
+      c: "15"
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "100 + 1 =",
+    answers: {
+      a: "93",
+      b: "101",
+      c: "7",
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "76 + 43 =",
+    answers: {
+      a: "42",
+      b: "52",
+      c: "33",
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "23 - 7 =",
+    answers: {
+      a: "16",
+      b: "11",
+      c: "22",
+    },
+    correctAnswer: "a"
+  },
+  {
+    question: "70 + 40 =",
+    answers: {
+      a: "110",
+      b: "101",
+      c: "191",
+    },
+    correctAnswer: "a"
+  },
+  {
+    question: "4 + 0 =",
+    answers: {
+      a: "9",
+      b: "4",
+      c: "99",
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "44 - 22 =",
+    answers: {
+      a: "41",
+      b: "56",
+      c: "22",
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "5 + 5 =",
+    answers: {
+      a: "2",
+      b: "10",
+      c: "42",
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "99 - 41 =",
+    answers: {
+      a: "58",
+      b: "92",
+      c: "78",
+    },
+    correctAnswer: "a"
+  }
 
-    var questions = [
-      ["44 + 98 = ", "114", "89", "5", "A"],
-      ["7 - 3  = ", "8", "4", "15", "B"],
-      ["100 + 1 = ", "93", "101", "7", "B"],
-      ["76 - 43  = ", "42", "52", "33", "C"],
-      ["23 - 7  =", "16", "11", "22","A"],
-      ["70 + 40 =", "110", "101", "191","A"],
-      ["4 + 0  =", "9", "4", "99","B"],
-      ["44 - 22 =", "41", "56", "22","C"],
-      ["5 + 5  =", "2", "10", "42","B"],
-      ["99 - 41 =", "58", "92", "78","A"]
-      ];
+];
 
-      function get(id){
-        return document.getElementById(id);
-      }
+function buildQuiz() {
+  // we'll need a place to store the HTML output
+  const output = [];
 
+  // for each question...
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    // we'll want to store the list of answer choices
+    const answers = [];
 
+    // and for each available answer...
+    for (letter in currentQuestion.answers) {
+      // ...add an HTML radio button
+      answers.push(
+        `<label>
+           <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+         </label>`
+      );
+    }
 
+    // add this question and its answers to the output
+    output.push(
+      `<div class="slide">
+         <h2 class="question"> ${currentQuestion.question} </h2>
+         <div class="answers"><b> ${answers.join("")} </b></div>
+       </div>`
+    );
+  });
 
+  // finally combine our output list into one string of HTML and put it on the page
+  quizContainer.innerHTML = output.join("");
+}
+
+function showResults() {
+  // gather answer containers from our quiz
+  const answerContainers = quizContainer.querySelectorAll(".answers");
+
+  // keep track of user's answers
+  let numCorrect = 0;
+
+  // for each question...
+  myQuestions.forEach((currentQuestion, questionNumber) => {
+    // find selected answer
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    // if answer is correct
+    if (userAnswer === currentQuestion.correctAnswer) {
+      // add to the number of correct answers
+      numCorrect++;
+
+      // color the answers green
+      answerContainers[questionNumber].style.color = "lightgreen";
+    } else {
+      // if answer is wrong or blank
+      // color the answers red
+      answerContainers[questionNumber].style.color = "red";
+    }
+  });
+
+  // show number of correct answers out of total
+  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+}
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove("active-slide");
+  slides[n].classList.add("active-slide");
+  currentSlide = n;
+
+  if (currentSlide === 0) {
+    previousButton.style.display = "none";
+  } else {
+    previousButton.style.display = "inline-block";
+  }
+
+  if (currentSlide === slides.length - 1) {
+    nextButton.style.display = "none";
+    submitButton.style.display = "inline-block";
+  } else {
+    nextButton.style.display = "inline-block";
+    submitButton.style.display = "none";
+  }
+}
+
+function showNextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function showPreviousSlide() {
+  showSlide(currentSlide - 1);
+}
+
+const quizContainer = document.getElementById("quiz");
+const resultsContainer = document.getElementById("results");
+const submitButton = document.getElementById("submit");
+
+// display quiz right away
+buildQuiz();
+
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+showSlide(0);
+
+// on submit, show results
+submitButton.addEventListener("click", showResults);
+previousButton.addEventListener("click", showPreviousSlide);
+nextButton.addEventListener("click", showNextSlide);
+})();
 
     </script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
