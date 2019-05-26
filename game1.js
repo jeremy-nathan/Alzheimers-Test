@@ -19,8 +19,7 @@ let questions = [
     answer: 1
   },
   {
-    question:
-      "What is 160 + 5 = ?",
+    question:"What is 160 + 5 = ?",
     choice1: "167",
     choice2: "198",
     choice3: "165",
@@ -52,16 +51,93 @@ let questions = [
     choice3: "186",
     choice4: "101",
     answer: 3
+  },
+
+  {
+    question: "What is 44 + 98 = ?",
+    choice1: "142",
+    choice2: "89",
+    choice3: "5",
+    choice4: "54",
+    answer: 1
+  },
+  {
+    question: "What is 17 - 3 = ?",
+      choice1: "8",
+      choice2: "14",
+      choice3: "15",
+      choice4: "20",
+      answer: 2
+  },
+  {
+    question: "What is 100 + 1 - 22 = ?",
+      choice1: "93",
+      choice2: "79",
+      choice3: "7",
+      choice4:"110",
+      answer: 2
+  },
+  {
+    question: "76 - 43 =",
+      choice1: "42",
+      choice2: "52",
+      choice3: "33",
+      choice4: "103",
+      answer: 3
+  },
+  {
+    question: "23 - 7 =",
+      choice1: "16",
+      choice2: "11",
+      choice3: "22",
+      choice4: "30",
+      answer: 1
+  },
+  {
+    question: "70 + 40 =",
+      choice1: "110",
+      choice2: "101",
+      choice3: "191",
+      choice4:"111",
+      answer: 1
   }
-
-
-
-
+  // {
+  //   question: "4 + 0 =",
+  //     choice1: "9",
+  //     choice2: "4",
+  //     choice3: "99",
+  //     choice4: "0",
+  //     answer: 2
+  // },
+  // {
+  //   question: "44 - 22 =",
+  //     choice1: "41",
+  //     choice2: "56",
+  //     choice3: "22",
+  //     choice4: "66"
+  //     answer: 3
+  // },
+  // {
+  //   question: "5 + 5 =",
+  //     choice1: "2",
+  //     choice2: "10",
+  //     choice3: "42",
+  //     choice4: "25",
+  //     answer: 2
+  // },
+  // {
+  //   question: "99 - 41 =",
+  //     choice1: "58",
+  //     choice2: "92",
+  //     choice3: "78",
+  //     choice4: "55",
+  //     answer: 1
+  // }
 ];
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 5;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
   questionCounter = 0;
@@ -74,7 +150,7 @@ getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
     //go to the end page
-    return window.location.assign("file:///C:/Users/User/Desktop/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript-master/Quiz%20App%20Master/end.html");
+    return window.location.assign("add & subtract/end.html");
   }
   questionCounter++;
   progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
