@@ -2,7 +2,13 @@
   background-color: #ecf5ff;
   font-size: 62.5%;
 }
+body{
+  background-image: url("https://i.gifer.com/4hsm.gif");
+  background-position: left;
+  background-size:50%;
+  background-repeat: repeat;
 
+}
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -42,12 +48,11 @@ h3 {
 }
 
 /* UTILITIES */
+.hi{
+  margin-top: 50%;
+}
 
 .container {
-  background-image: url("http://i.imgur.com/9WDRZCR.gif");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: flex;

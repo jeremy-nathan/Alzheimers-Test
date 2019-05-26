@@ -44,10 +44,10 @@ h3 {
 /* UTILITIES */
 
 .container {
-  background-image: url("http://i.imgur.com/9WDRZCR.gif");
+  /* background-image: url("http://i.imgur.com/9WDRZCR.gif");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   width: 100vw;
   height: 100vh;
   display: flex;

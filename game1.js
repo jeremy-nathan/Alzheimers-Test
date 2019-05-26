@@ -37,7 +37,7 @@ let questions = [
   },
 
   {
-    question: " What is 199 - 98 = ?",
+    question: "What is 199 - 98 = ?",
     choice1: "109",
     choice2: "101",
     choice3: "199",
@@ -46,7 +46,7 @@ let questions = [
   },
 
   {
-    question: " What is 99 + 87 = ?",
+    question: "What is 99 + 87 = ?",
     choice1: "102",
     choice2: "122",
     choice3: "186",
@@ -79,7 +79,7 @@ let questions = [
       answer: 2
   },
   {
-    question: "76 - 43 =",
+    question: "What is 76 - 43 = ?",
       choice1: "42",
       choice2: "52",
       choice3: "33",
@@ -87,7 +87,7 @@ let questions = [
       answer: 3
   },
   {
-    question: "23 - 7 =",
+    question: "What is 23 - 7 = ?",
       choice1: "16",
       choice2: "11",
       choice3: "22",
@@ -95,7 +95,7 @@ let questions = [
       answer: 1
   },
   {
-    question: "70 + 40 =",
+    question: "What is 70 + 40 = ?",
       choice1: "110",
       choice2: "101",
       choice3: "191",
