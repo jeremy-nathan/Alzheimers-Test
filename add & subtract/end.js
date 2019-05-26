@@ -28,3 +28,8 @@ saveHighScore = e => {
   localStorage.setItem("highScores", JSON.stringify(highScores));
   window.location.assign("index.html");
 };
+
+function endTest(){
+finalScore.innerHTML = "<h1>You got "+score+" of 10 questions correct</h1>";
+// test.innerHTML += "<a class='btn btn-primary' href='home.html'>Return</a>";
+}
