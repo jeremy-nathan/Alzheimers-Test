@@ -1,4 +1,4 @@
-import { endTest } from 'add & subtract/end.js';
+// import { endTest } from 'add & subtract/end.js';
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById("progressText");
@@ -199,5 +199,5 @@ incrementScore = num => {
   score += num;
   scoreText.innerText = score;
 };
-document.getElementById("end").onclick=endTest()
+// document.getElementById("end").onclick=endTest()
 startGame();
