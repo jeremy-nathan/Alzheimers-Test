@@ -1,3 +1,15 @@
+body{
+
+    background-image: url("https://thumbs.gfycat.com/IdealPeacefulAmericanbittern-max-1mb.gif"),url("https://media2.giphy.com/media/yN5xPFm8klwMddZVKi/source.gif");
+    background-position: left,right;
+    background-size:20%;
+    background-repeat: no-repeat;
+
+}
+
+
+
+
 .choice-container {
   display: flex;
   margin-bottom: 0.5rem;
