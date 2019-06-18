@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
  require('database_connect.php');
 
@@ -31,4 +30,3 @@ window.location.href='Loginaftersign.html';
 }
 }
 ?>
->>>>>>> 91cd998ea2b7ee0c34873b678aeb1877a220e175
